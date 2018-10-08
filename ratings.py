@@ -45,9 +45,8 @@ def order_restaurant_ratings(file_name,new_score=[]):
 	#build a dictionary with restaurant names and scores
 	with open(file_name) as file:
 		for line in file:
-			line = line.rstrip()
-			restaurant_and_score = line.split(":")
-			restaurants_ratings[restaurant_and_score[0]] = restaurant_and_score[1]
+			restaurant, score = line.rstrip().split(":")
+			restaurants_ratings[restaurant] = score
 
 	if new_score != []:
 		# Add user's restaurant and its rating to the dictionary:
